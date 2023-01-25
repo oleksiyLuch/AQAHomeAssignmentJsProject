@@ -1,0 +1,12 @@
+{
+  "name": "AQAHomeAssignmentJsProject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:oleksiyLuch/AQAHomeAssignmentJsProject.git",
+  "author": "Automation-Luch <oleksiyk@titanium-tech.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.30.0"
+  },
+  "scripts": {}
+}

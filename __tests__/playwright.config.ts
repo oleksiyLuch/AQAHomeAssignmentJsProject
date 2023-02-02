@@ -15,7 +15,7 @@ const config: PlaywrightTestConfig = {
   use: {
     ignoreHTTPSErrors: true,
     acceptDownloads: true,
-    baseURL: credentials.defaultUrl,
+    baseURL: 'https://webapp.wisestamp.com/',
     viewport: { width: 1920, height: 1080 },
     headless: true,
     video: 'on-first-retry',
@@ -33,13 +33,14 @@ const config: PlaywrightTestConfig = {
   projects: [
     {
       name: 'Chrome',
-      use: { browserName: 'chromium' },
+      use: { browserName: 'chromium', baseURL: credentials.defaultUrl },
+
       snapshotDir: `testData/snapshots/chromium`
     },
 
     {
       name: 'Safari',
-      use: { browserName: 'webkit' },
+      use: { browserName: 'webkit', baseURL: credentials.defaultUrl },
       snapshotDir: `testData/snapshots/safari`
     },
 

@@ -33,14 +33,14 @@ const config: PlaywrightTestConfig = {
   projects: [
     {
       name: 'Chrome',
-      use: { browserName: 'chromium', baseURL: credentials.defaultUrl },
+      use: { browserName: 'chromium' },
 
       snapshotDir: `testData/snapshots/chromium`
     },
 
     {
       name: 'Safari',
-      use: { browserName: 'webkit', baseURL: credentials.defaultUrl },
+      use: { browserName: 'webkit' },
       snapshotDir: `testData/snapshots/safari`
     },
 

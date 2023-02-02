@@ -15,7 +15,8 @@ jobs:
         run: yarn playwright install --with-deps
       - name: Run Playwright tests
         run: | 
-          cd __tests__
+          cd __tests__/
+          echo $PWD
           yarn test:e2e
       - uses: actions/upload-artifact@v3
         if: always()

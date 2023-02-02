@@ -19,7 +19,7 @@ export const getRandomUrl = (text: string) => {
   return `https://${text}${number}.com`
 }
 
-export const getRandomArrayElement = (array) => {
+export const getRandomArrayElement = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
@@ -27,14 +27,14 @@ export const getRandomEmail = () => {
   return `lopezmichaela1b031+auto${getRandomStringSetLength(10)}@gmail.com`
 }
 
-export const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+export const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
-export const hexToRgb = (hex) => {
+export const hexToRgb = hex => {
   const rgb = hex
     .replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => '#' + r + r + g + g + b + b)
     .substring(1)
     .match(/.{2}/g)
-    .map((x) => parseInt(x, 16))
+    .map(x => parseInt(x, 16))
 
   return `rgb(${rgb.join(', ')})`
 }
@@ -43,7 +43,7 @@ export const rgbToHex = (r, g, b) => {
   const rgbToHex = (r, g, b) =>
     '#' +
     [r, g, b]
-      .map((x) => {
+      .map(x => {
         const hex = x.toString(16)
         return hex.length === 1 ? '0' + hex : hex
       })
@@ -66,7 +66,7 @@ export const subtractFromCurrentDate = (amount, type, format) => {
     : moment().subtract(amount, type).format(format)
 }
 
-export const deepCopyObject = (object) => {
+export const deepCopyObject = object => {
   return JSON.parse(JSON.stringify(object))
 }
 

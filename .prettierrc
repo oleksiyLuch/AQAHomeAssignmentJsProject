@@ -1,0 +1,20 @@
+
+{
+  "parser": "typescript",
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "jsxSingleQuote": true,
+  "printWidth": 80,
+  "overrides": [
+    {
+      "files": "__tests__/**/*.ts",
+      "options": {
+        "printWidth": 120
+      }
+    }
+  ]
+}

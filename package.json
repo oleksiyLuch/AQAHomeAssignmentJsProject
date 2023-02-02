@@ -8,7 +8,9 @@
   "devDependencies": {
     "@playwright/test": "^1.30.0"
   },
-  "scripts": {},
+  "scripts": {
+    "test:e2e": "playwright test __tests__/tests --project chrome"
+  },
   "dependencies": {
     "moment": "^2.29.4"
   }

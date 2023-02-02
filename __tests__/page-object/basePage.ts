@@ -1,19 +1,21 @@
-import { expect, Locator, Page } from "@playwright/test";
-import { EditorPage } from "./editorPage";
+import { expect, Locator, Page } from '@playwright/test'
+import { EditorPage } from './editorPage'
 
 export class BasePage {
-  readonly page: Page;
-  readonly editor: EditorPage;
-  readonly overLayModal: Locator;
+  readonly page: Page
+  readonly editor: EditorPage
+  readonly overLayModal: Locator
+  readonly closeNotificationButton: Locator
 
   constructor(page: Page) {
-    this.page = page;
-    this.editor = new EditorPage(this.page);
-    this.overLayModal = page.locator('[id="anon-overlay"]');
+    this.page = page
+    this.editor = new EditorPage(this.page)
+    this.overLayModal = page.locator('[id="anon-overlay"]')
+    this.closeNotificationButton = page.locator('[aid="details_rich_fields.div.close"]')
   }
 
   closeOverLayModal = async () => {
-    await this.editor.nameField.fill("someText");
-    await expect(this.overLayModal).toBeHidden();
-  };
+    await this.closeNotificationButton.click()
+    await expect(this.overLayModal).toBeHidden()
+  }
 }

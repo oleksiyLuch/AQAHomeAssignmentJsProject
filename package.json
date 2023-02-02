@@ -9,7 +9,7 @@
     "@playwright/test": "^1.30.0"
   },
   "scripts": {
-    "test:e2e": "playwright test __tests__/tests --project chrome"
+    "test:e2e": "npx playwright test "
   },
   "dependencies": {
     "moment": "^2.29.4"

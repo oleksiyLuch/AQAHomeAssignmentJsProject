@@ -1,10 +1,5 @@
 name: Playwright Tests
-<<<<<<< HEAD
 on: [push]
-=======
-on: [ push ]
-
->>>>>>> b35c8ee5ff46e9f76569e157a84cab672d83189d
 jobs:
   test:
     timeout-minutes: 60

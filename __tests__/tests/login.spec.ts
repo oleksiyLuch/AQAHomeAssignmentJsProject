@@ -6,7 +6,19 @@ test.describe("Login", () => {
     await loginPage.closeOverLayModal();
   });
 
-  test(`Check that the user can be login [WISESTAMP-1]`, async ({
+  test.only(`Check that the user can be login [WISESTAMP-1]`, async ({
+    loginPage,
+    baseURL,
+  }) => {
+    await loginPage.clickOnLoginButton();
+    await loginPage.fillLoginForm(credentials.email, credentials.password);
+    await loginPage.clickSubmitLoginFormButton();
+
+    await expect(loginPage.successNotification).toBeVisible();
+    await expect(loginPage.page).toHaveURL(`${baseURL}my-signatures`);
+  });
+
+  test(`Check that the can't be registered with the alredy registered credentions [WISESTAMP-1]`, async ({
     loginPage,
     baseURL,
   }) => {

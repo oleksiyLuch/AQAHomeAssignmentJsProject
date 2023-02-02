@@ -6,7 +6,7 @@ test.describe('Login', () => {
     await loginPage.closeOverLayModal()
   })
 
-  test.only(`Check that the user can be login [WISESTAMP-1]`, async ({ loginPage, baseURL }) => {
+  test(`Check that the user can be login [WISESTAMP-1]`, async ({ loginPage, baseURL }) => {
     await loginPage.clickOnLoginButton()
     await loginPage.fillLoginForm(credentials.email, credentials.password)
     await loginPage.clickSubmitLoginFormButton()

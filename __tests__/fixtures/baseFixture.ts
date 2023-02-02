@@ -11,7 +11,7 @@ type ixsFixtures = {
 
 export const test = base.extend<ixsFixtures>({
   page: async ({ page, baseURL }, use) => {
-    await page.goto('./')
+    await page.goto('https://webapp.wisestamp.com/')
     await use(page)
   },
 

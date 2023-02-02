@@ -17,7 +17,7 @@ jobs:
         run: | 
           cd __tests__/
           echo $PWD
-          yarn test:e2e
+          npx playwright test --config=playwright.config.ts
       - uses: actions/upload-artifact@v3
         if: always()
         with:

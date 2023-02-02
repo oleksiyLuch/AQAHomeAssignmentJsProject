@@ -2,7 +2,8 @@ import { PlaywrightTestConfig } from '@playwright/test'
 import { timeouts } from './lib/timeouts'
 import { credentials } from './lib/credentions'
 
-const config: PlaywrightTestConfig = {
+import { defineConfig, devices } from '@playwright/test'
+export default defineConfig({
   globalTimeout: timeouts.globalTestsTimeout,
   timeout: timeouts.testTimeout,
   retries: process.env.CI ? 2 : 0,
@@ -15,7 +16,7 @@ const config: PlaywrightTestConfig = {
   use: {
     ignoreHTTPSErrors: true,
     acceptDownloads: true,
-    baseURL: 'https://webapp.wisestamp.com/',
+    baseURL: credentials.defaultUrl,
     viewport: { width: 1920, height: 1080 },
     headless: true,
     video: 'on-first-retry',
@@ -32,24 +33,16 @@ const config: PlaywrightTestConfig = {
   },
   projects: [
     {
-      name: 'Chrome',
-      use: { browserName: 'chromium' },
-
-      snapshotDir: `testData/snapshots/chromium`
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] }
     },
-
     {
-      name: 'Safari',
-      use: { browserName: 'webkit' },
-      snapshotDir: `testData/snapshots/safari`
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] }
     },
-
     {
-      name: 'FireFox',
-      snapshotDir: `testData/snapshots/firefox`,
-      use: { browserName: 'firefox' }
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] }
     }
   ]
-}
-
-export default config
+})
